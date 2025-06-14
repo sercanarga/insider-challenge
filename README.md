@@ -138,6 +138,7 @@ The application uses a single table `messages` with the following structure:
 
 ### Work Notes
 These are the notes took before i'm started working. They may not reflect the final version.
+![Docker](https://github.com/sercanarga/insider-challenge/blob/main/assets/docker.png?raw=true)
 ![Notes](https://github.com/sercanarga/insider-challenge/blob/main/assets/work-notes.png?raw=true)
 
 ### License
