@@ -1,0 +1,129 @@
+basePath: /
+definitions:
+  handler.ErrorResponse:
+    properties:
+      error:
+        type: string
+    type: object
+  handler.MessageWithCache:
+    properties:
+      cached_message_id:
+        type: string
+      cached_sent_at:
+        type: string
+      content:
+        description: Maximum 150 character (character limit is required for message
+          content)
+        type: string
+      created_at:
+        type: string
+      id:
+        type: string
+      is_sent:
+        type: boolean
+      sent_at:
+        type: string
+      to:
+        type: string
+      updated_at:
+        type: string
+    type: object
+  handler.PaginatedMessagesResponse:
+    properties:
+      messages:
+        items:
+          $ref: '#/definitions/handler.MessageWithCache'
+        type: array
+      page:
+        type: integer
+      page_size:
+        type: integer
+      total:
+        type: integer
+    type: object
+  handler.StatusResponse:
+    properties:
+      status:
+        type: string
+    type: object
+info:
+  contact: {}
+  description: A message processing service API
+  title: Insider Challenge API
+  version: "1.0"
+paths:
+  /sent:
+    get:
+      consumes:
+      - application/json
+      description: Retrieves a paginated list of sent messages
+      parameters:
+      - description: 'Page number (default: 1)'
+        in: query
+        name: page
+        type: integer
+      - description: 'Number of items per page (default: 10, max: 100)'
+        in: query
+        name: page_size
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/handler.PaginatedMessagesResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/handler.ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/handler.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/handler.ErrorResponse'
+      summary: Get sent messages
+      tags:
+      - message
+  /start:
+    post:
+      consumes:
+      - application/json
+      description: Starts the automatic message sending process
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/handler.StatusResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/handler.ErrorResponse'
+      summary: Start message sender
+      tags:
+      - message
+  /stop:
+    post:
+      consumes:
+      - application/json
+      description: Stops the automatic message sending process
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/handler.StatusResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/handler.ErrorResponse'
+      summary: Stop message sender
+      tags:
+      - message
+swagger: "2.0"
