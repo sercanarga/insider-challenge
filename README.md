@@ -18,9 +18,11 @@ This project is a microservice developed in Go that emulates a cronjob system fo
   - [x] Stop (/stop)
   - [x] List sent message (/sent)
 
+---
 ### ⚠️ Sample Data Warning
 The project includes sample data for development and testing purposes only. This data should **NOT** be used in production environments. Before deploying to production:
 - Remove `InitSampleData` function
+---
 
 ### API Response Examples
 
