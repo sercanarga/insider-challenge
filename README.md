@@ -1,6 +1,6 @@
 # Insider Challenge
 
-This project is an API service developed in Go. It is a simple message sending system.
+This project is a microservice developed in Go that emulates a cronjob system for automated message sending. It provides an API interface to start and stop message sending processes, and allows tracking of sent messages. The service is designed to handle scheduled message delivery in a distributed environment.
 
 ## Features
 
@@ -12,10 +12,15 @@ This project is an API service developed in Go. It is a simple message sending s
     - [x] Database transactions
     - [x] Redis cached
     - [x] Swagger documentation (available at http://localhost:PORT/swagger/index.html)
+    - [x] Sample data
 - [x] Routes
   - [x] Start (/start)
   - [x] Stop (/stop)
   - [x] List sent message (/sent)
+
+### ⚠️ Sample Data Warning
+The project includes sample data for development and testing purposes only. This data should **NOT** be used in production environments. Before deploying to production:
+- Remove `InitSampleData` function
 
 ### API Response Examples
 
