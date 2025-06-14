@@ -42,10 +42,6 @@ This project is an API service developed in Go. It is a simple message sending s
 }
 ```
 
-### Work Notes
-These are the notes took before i'm started working. They may not reflect the final version.
-![Notes](https://github.com/sercanarga/insider-challenge/blob/main/assets/work-notes.png?raw=true)
-
 ### Installation
 
 1. Clone the project:
@@ -132,6 +128,10 @@ The application uses a single table `messages` with the following structure:
 | created_at   | DateTime  | When the message was created   |
 | updated_at   | DateTime  | When the message was updated   |
 | deleted_at   | DateTime  | Soft delete timestamp          |
+
+### Work Notes
+These are the notes took before i'm started working. They may not reflect the final version.
+![Notes](https://github.com/sercanarga/insider-challenge/blob/main/assets/work-notes.png?raw=true)
 
 ### License
 No license.
