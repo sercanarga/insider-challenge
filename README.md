@@ -11,10 +11,36 @@ This project is an API service developed in Go. It is a simple message sending s
     - [x] Database indexes
     - [x] Database transactions
     - [x] Redis cached
+    - [x] Swagger documentation (available at http://localhost:PORT/swagger/index.html)
 - [x] Routes
   - [x] Start (/start)
   - [x] Stop (/stop)
   - [x] List sent message (/sent)
+
+### API Response Examples
+
+#### GET /sent
+```json
+{
+  "messages": [
+    {
+      "id": "83cd6349-2011-451d-b96a-a38a9575fa27",
+      "to": "+905071773757",
+      "content": "Merhaba! Bu bir örnek mesajdır.",
+      "is_sent": true,
+      "sent_at": "2025-06-14T19:46:51.617689Z",
+      "created_at": "2025-06-14T19:39:26.297809Z",
+      "updated_at": "2025-06-14T19:46:51.617818Z",
+      "cached_sent_at": "2025-06-14T19:46:51Z",
+      "cached_message_id": "67f2f8a8-ea58-4ed0-a6f9-ff217df4d849"
+    },
+    ...
+  ],
+  "page": 1,
+  "page_size": 10,
+  "total": 3
+}
+```
 
 ### Work Notes
 These are the notes took before i'm started working. They may not reflect the final version.
