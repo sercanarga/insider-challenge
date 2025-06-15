@@ -59,7 +59,7 @@ git clone https://github.com/sercanarga/insider-challenge.git
 ```
 cd insider-challenge
 ```
-3. edit the env file:
+3. edit the `.env.example` file and rename to `.env`:
 ```env
 # Server
 SERVER_PORT=8080
