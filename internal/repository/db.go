@@ -52,7 +52,7 @@ func InitDB(cfg *config.Config) (*gorm.DB, error) {
 	sqlDB.SetMaxOpenConns(maxOpenConns)
 	sqlDB.SetConnMaxLifetime(connMaxLifetime)
 
-	// Auto migrte database schema
+	// Auto migrate database schema
 	if err := db.AutoMigrate(&domain.Message{}); err != nil {
 		return nil, fmt.Errorf("migrate database: %w", err)
 	}
